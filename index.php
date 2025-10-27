@@ -32,6 +32,16 @@
     include("php_algoritmo/T05_Operadores/operadores_comparacion.php");
     ?>
 
+    <h4>IFELSE</h4>
+    <?php
+    include("php_algoritmo/T06_Ifelse/Ejemplo01.php");
+    ?>
+
+    <h4>FOR</h4>
+    <?php
+    include("php_algoritmo/T07_For/Ejemplo01.php");
+    ?>
+
 
     <script src="" async defer></script>
 </body>

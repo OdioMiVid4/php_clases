@@ -14,6 +14,9 @@ $EmpleadoA_anual = ($EmpleadoA_mensual * $meses) + ($extra * 2);
 $EmpleadoB_anual = ($EmpleadoB_mensual * $meses) + ($extra * 2);
 
 $total_empresa = $EmpleadoA_anual + $EmpleadoB_anual;
+
+echo"==============================\n";
+echo "                  Pago Anual de Empleados         \n";
 echo "El pago total del empleado A en el año es: S/". number_format($EmpleadoA_anual)."\n";
 echo "El pago total del empleado B en el año es: S/". number_format($EmpleadoB_anual)."\n";
 echo"El pago total que ha realizado la empresa en el año es: S/". number_format($total_empresa)."\n";
