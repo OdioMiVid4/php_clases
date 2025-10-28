@@ -1,4 +1,4 @@
-<!--
+<!-- Definición: 'for' es un bucle utilizado para repetir una acción un número determinado de veces.
 <?php
 for ($i = 1; $i <= 5; $i++) {
     echo "Ejemplo 1: Iteracion $i \n"."<br>"; //Muestra Iteracion 1 y Iteracion (2,3,4,5)

@@ -1,4 +1,7 @@
 <?php
+/*Las funciones en PHP permiten encapsular un bloque de código para reutilizarlo en diferentes partes del 
+programa.*/
+
 function saludar($nombre){
     return"Hola $nombre";
 }
@@ -14,6 +17,7 @@ function sumar ($a , $b) {
     return $a + $b;
 }
 
+// Llamar a la funcion y mostrar el resultado
 $resultado = sumar(5,5);
 echo "La suma de 5 y 5 es: " . $resultado;
 
@@ -27,8 +31,8 @@ function Area ($base , $altura ){
 
 }
 
-$base = readline("Ingrese la base");
-$altura = readline("Ingrese la altura");
+$base = readline("Ingrese la base: ");
+$altura = readline("Ingrese la altura: ");
 
 
 echo "El Area es: ". Area( $base , $altura );
