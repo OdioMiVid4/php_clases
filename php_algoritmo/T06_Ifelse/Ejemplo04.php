@@ -1,64 +1,53 @@
 <?php
+/*Ejemplo 04: Pago total de empleados en un año
+Enunciado: La empresa necesita saber el monto total que debe pagar a sus dos empleados después de
+haber trabajado todo el año.
+*El empleado A gana 2500 por mes.
+*El empleado B gana 3000 por mes.
+*«Cada empleado recibe un beneficio extra en julio y diciembre de 350.
+Se pide determinar:
+1.¿Cuánto se le debe pagar al empleado A en el año?
+2.¿Cuánto se le debe pagar al empleado B en el año?
+3.¿Cuánto en total ha pagado la empresa? */
 
-/*Ejemplo 4:  La ama de casa va al supermercado y compra 6 productos: A, B, C, D, E y F.
-Cada producto tiene un precio determinado que ella debe ingresar en el sistema. 
+// Datos base 
+$empleadoA_sueldo = 2500;
+$empleadoB_sueldo = 3000;
+$bono = 350; // bono recibido en julio y diciembre 
+$meses = 12;
 
-El programa debe:
-1.Pedir el precio de cada producto.
-2.Calcular el total a pagar.
-3.Mostrar en pantalla el producto con su respectivo precio.
-4.Comparar el total con su presupuesto de S/ 1000.00 y calcular cuanto dinero le sobra despues de la compra.
-*/
+// Cálculo del pago anual para cada empleado 
+$empleadoA_total = ($empleadoA_sueldo * $meses) + ($bono * 2);
+$empleadoB_total = ($empleadoB_sueldo * $meses) + ($bono * 2);
 
-// Presupuesto de la ama de casa
-$presupuesto = 1000.00;
+// Cálculo del total pagado por la empresa 
+$total_empresa = $empleadoA_total + $empleadoB_total;
 
-
-// Ingresar los precios de los productos
-echo "Ingrese el precio del producto A :\n";
-
-$A = (float) readline("");
-
-echo "Ingrese el precio del producto B :\n";
-$B = (float) readline("");
-
-echo "Ingrese el precio del producto C :\n";
-$C = (float) readline("");
-
-echo "Ingrese el precio del producto D :\n";
-$D = (float) readline("");
-
-echo "Ingrese el precio del producto E :\n";
-$E = (float) readline("");
-
-echo "Ingrese el precio del producto F :\n";
-$F = (float) readline("");
-
-// Calcular la suma de los productos
-$total_a_pagar = $A + $B + $C + $D + $E + $F;
-// Calcular el dinero sobrante o faltante
-$sobrante = $presupuesto - $total_a_pagar;
-
-// Mostrar el resultado final
-echo "===========================================";
-echo "\n==========DETALLE DE LA COMPRA==========\n";
-echo "===========================================\n";
-echo "Producto A: S/ " . number_format($A, 2) . "\n";
-echo "Producto B: S/ " . number_format($B, 2) . "\n";
-echo "Producto C: S/ " . number_format($C, 2) . "\n";
-echo "Producto D: S/ " . number_format($D, 2) . "\n";
-echo "Producto E: S/ " . number_format($E, 2) . "\n";
-echo "Producto F: S/ " . number_format($F, 2) . "\n";
-echo "===========================================\n";
-echo "Total a pagar: S/ " . number_format($total_a_pagar, 2) . "\n";
-echo "Presupuesto disponible: S/ " . number_format($presupuesto, 2) . "\n";
-
-// Validar si hay dinero sobrante o faltante
-if ($total_a_pagar <= $presupuesto) {
-    echo "Compra realizada con exito.\n";
-    echo "El dinero sobrante es: S/ " . number_format($sobrante, 2) . "\n";
+// Determinar quién ganó más y la diferencia 
+if ($empleadoA_total > $empleadoB_total) {
+    $mayor = "Empleado A";
+    $diferencia = $empleadoA_total - $empleadoB_total;
+} elseif ($empleadoB_total > $empleadoA_total) {
+    $mayor = "Empleado B";
+    $diferencia = $empleadoB_total - $empleadoA_total;
 } else {
-    $faltante = $total_a_pagar - $presupuesto;
-    echo "¡Atencion! Se paso del presupuesto en S/ " . number_format($faltante, 2) . "\n";
+    $mayor = "Ambos ganaron lo mismo";
+    $diferencia = 0;
+
 }
+
+
+// Mostrar resultados 
+echo "<h3>Reporte Anual de Pagos</h3>";
+echo "Empleado A - Sueldo mensual: S/ $empleadoA_sueldo <br>";
+echo "Empleado B - Sueldo mensual: S/ $empleadoB_sueldo <br>";
+echo "Bono semestral: S/ $bono (Julio y Diciembre)<br><br>";
+
+echo "Total anual del Empleado A: <strong>S/ $empleadoA_total</strong><br>";
+echo "Total anual del Empleado B: <strong>S/ $empleadoB_total</strong><br><br>";
+
+echo "Monto total pagado por la empresa: <strong>S/ $total_empresa</strong><br><br>";
+echo "Empleado con mayor ingreso: <strong>$mayor</strong><br>";
+echo "Diferencia de ingresos: <strong>S/ $diferencia</strong>";
+
 ?>

@@ -13,7 +13,7 @@ class CuentaBancaria
     public function depositar($monto)
     {
         if ($monto > 0) {
-            $this->saldo -= $monto;
+            $this->saldo += $monto;
             echo "Deposito de S/ $monto realizado . <br> ";
         } else {
             echo "Monto invalido para deposito . <br>";
@@ -26,9 +26,22 @@ class CuentaBancaria
             $this->saldo -= $monto;
             echo "Retiro de S/ $monto realizado . <br>";
         } else {
-            echo "Fondoa insuficientes";
+            echo "Fondos insuficientes o monto invalido. <br>";
         }
     }
+    public function mostrarSaldo(){
+        echo "Saldo actual de {$this->titular} S/ $this->saldo<br>";
+    }
 }
+
+//Crear objeto Cuenta
+$cuenta = new CuentaBancaria("Carlos", "1000");
+
+//Operaciones
+$cuenta->mostrarSaldo();
+$cuenta->depositar(500);
+$cuenta->retirar(300);
+$cuenta->retirar(1500); //Error esperado
+$cuenta->mostrarSaldo();
 
 ?>

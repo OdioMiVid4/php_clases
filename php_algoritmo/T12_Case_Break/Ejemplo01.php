@@ -1,4 +1,8 @@
 <?php
+/*Tema 12: Case y Break
+Definición: 'switch - case' evalúa múltiples condiciones y ejecuta un bloque de código
+según el caso. 'break' termina la ejecución de un caso. 
+*/
 $color = readline("Elija un color: ");
 switch ($color) {
     case "rojo":
