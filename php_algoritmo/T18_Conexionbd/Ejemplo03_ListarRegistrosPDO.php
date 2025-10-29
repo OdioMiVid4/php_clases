@@ -1,13 +1,13 @@
 <?php
 $host = "localhost";
-$puerto = "3307";
+//$puerto = "3306";
 $usuario = "root";
 $password = ""; // o déjalo vacío si no tiene
 $base_datos = "gestion_empleados";
 
 try {
-    // Crear conexión usando PDO con puerto incluido
-    $conn = new PDO("mysql:host=$host;port=$puerto;dbname=$base_datos;charset=utf8", $usuario, $password);
+    // Crear conexión usando PDO con puerto incluido port=$puerto
+    $conn = new PDO("mysql:host=$host;dbname=$base_datos;charset=utf8", $usuario, $password);
 
     // Activar modo de error por excepción
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
