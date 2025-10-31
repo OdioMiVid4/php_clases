@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "CodeGPT.apiKey": "OpenAI"
+=======
+    "liveServer.settings.port": 5501
+>>>>>>> 38d4df72b950c0ca99423c25f21c87d10ffce620
 }
